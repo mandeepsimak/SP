@@ -49,7 +49,7 @@ void JS :: addRollNoFields()
         << "{" << endl
         << "select.options[select.options.length] = new Option(BranchNames[k], BranchNames[k]); " //<< endl
 //        sel.options[sel.options.length] = new Option("text3","value3"); 
-        << "var option = document.createElement(\"option\");" << endl
+//        << "var option = document.createElement(\"option\");" << endl
         << "select.appendChild(option);" //<< endl
         << "}" << endl
         << "}" << endl
