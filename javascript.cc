@@ -64,11 +64,21 @@ void JS :: addRoomFields()
    
   // To display room fields
   
+  MySQL.getRoomNos(RoomNos, RoomSize);
+  
    cout << "function addRoomFields()" << endl
         << "{" << endl
         << "var FieldName=new Array(\"Room No.\", \"Rows\", \"Cols\")" << endl
-        << "var value = document.getElementById(\"total_rooms\").value;" << endl
-        << "document.getElementById(\"rooms\").innerHTML = \" \"; " << endl
+        << "var value = document.getElementById(\"total_rooms\").value;" << endl;
+        
+   cout << "var RoomNos = new Array(";
+   for(int i = 0; i < RoomSize; i++)
+   {
+      cout << "\"" << RoomNos[i] << "\", ";
+   }
+   cout << "\"END\");" << endl;
+        
+   cout << "document.getElementById(\"rooms\").innerHTML = \" \"; " << endl
         << "var num = parseInt(value);" << endl
         << "var table=document.getElementById(\"rooms\");" << endl;
 
@@ -87,6 +97,11 @@ void JS :: addRoomFields()
         << "select.name = FieldName[j] + \"_\" + (i + 1);" << endl
         << "select.appendChild(option);" << endl
         << "cell.appendChild(select);" << endl
+        << "for(k = 0; k < " << RoomSize << "; k++ )" << endl
+        << "{" << endl
+        << "select.options[select.options.length] = new Option(RoomNos[k], RoomNos[k]); " //<< endl
+        << "select.appendChild(option);" //<< endl
+        << "}" << endl
         << "}" << endl
         << "else" << endl
         << "{" << endl

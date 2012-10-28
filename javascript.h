@@ -7,8 +7,8 @@ const int MAX_SIZE = 15;
 
 class JS
 {
-   string BranchName[MAX_SIZE];
-   int BranchSize;
+   string BranchName[MAX_SIZE], RoomNos[MAX_SIZE];
+   int BranchSize, RoomSize;
    Mysql MySQL;
 
    public:
@@ -16,6 +16,5 @@ class JS
       ~JS();
    
       void addRollNoFields();
-      void addRoomFields();
-      
+      void addRoomFields();    
 };
