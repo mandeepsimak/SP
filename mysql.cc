@@ -5,7 +5,7 @@
 
 Mysql :: Mysql()
 {
-   cout<<"Content-type: text/html\r\n\r\n";
+//   cout<<"Content-type: text/html\r\n\r\n";
    connect=mysql_init(NULL);
    if (!connect)
    {
