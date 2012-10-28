@@ -11,4 +11,10 @@ main(void)
    {
       cout << "<br>Branch Name: " << br[i] << endl;
    }
+   
+   MySQL.getRoomNos(br, s);
+   for(int i = 0; i < s; i++)
+   {
+      cout << "<br>Room Name: " << br[i] << endl;
+   }
 }

@@ -43,6 +43,7 @@ void Mysql :: getBranchNames(string branchname[], int &size)
    mysql_query (connect,"select distinct BranchName from RollNoDetails;");
    res_set = mysql_store_result(connect);
    unsigned int numrows = mysql_num_rows(res_set);
+   i = 0;
    while (((row=mysql_fetch_row(res_set)) !=NULL))
    {
       //size = i;
@@ -50,6 +51,21 @@ void Mysql :: getBranchNames(string branchname[], int &size)
        //j += atoi (row[i]);// converting to int
        //cout<<"i = "<<j<<endl;
        branchname[i] = row[0];
+       i++;
+   }
+   size = i;
+   
+}
+
+void Mysql :: getRoomNos(string roomno[], int &size)
+{
+   mysql_query (connect,"select distinct RoomNo from RoomDetails;");
+   res_set = mysql_store_result(connect);
+   unsigned int numrows = mysql_num_rows(res_set);
+   i = 0;
+   while (((row=mysql_fetch_row(res_set)) !=NULL))
+   {
+       roomno[i] = row[0];
        i++;
    }
    size = i;

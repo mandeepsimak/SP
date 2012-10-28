@@ -22,5 +22,6 @@ class Mysql
 //   void Select(string column, string table, int choice);
    void Select();
    void getBranchNames(string branchname[], int &size);
+   void getRoomNos(string roomno[], int &size);
     
 };
