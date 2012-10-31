@@ -20,6 +20,7 @@ void JS :: addRollNoFields()
    {
       cout << "\"" << BranchName[i] << "\", ";
    }
+   
    cout << "\"END\");" << endl;
        
    cout << "var value = document.getElementById(\"total_branches\").value;" << endl
