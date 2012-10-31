@@ -29,11 +29,13 @@ void JS :: addRollNoFields()
         << "for(i = 0; i < num; i++)" << endl
         << "{" << endl
         << "var row = table.insertRow(i);" << endl
-        << "var cell=row.insertCell( j );" << endl
+        
         << "for(j=0; j<5; j++)" << endl
         << "{" << endl
+        << "var cell=row.insertCell( j );" << endl
         << "if( j == 0)" << endl
         << "{" << endl
+        
 //        << "var input = document.createElement(\"input\");" << endl
 //        << "input.type = \"text\";" << endl
 //        << "input.defaultValue = FieldName[j] + " " + (i + 1);" << endl
