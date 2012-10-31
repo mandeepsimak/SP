@@ -2,6 +2,7 @@
 
 main(void)
 {
+   cout<<"Content-type: text/html\r\n\r\n";
    string br[10];
    int s;
    Mysql MySQL;

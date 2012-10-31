@@ -24,6 +24,20 @@ Mysql :: Mysql()
    i = j = 0;
 }
 
+void Mysql :: query(string field[], string qry, int &size)
+{
+   mysql_query (connect, qry.c_str());
+   res_set = mysql_store_result(connect);
+   unsigned int numrows = mysql_num_rows(res_set);
+   i = 0;
+   while (((row=mysql_fetch_row(res_set)) !=NULL))
+   {
+       field[i] = row[0];
+       i++;
+   }
+   size = i;
+}
+
 void Mysql :: Select()
 {
    mysql_query (connect,"select * from RollNoDetails;");
@@ -33,43 +47,21 @@ void Mysql :: Select()
    while (((row=mysql_fetch_row(res_set)) !=NULL))
    {
        cout<<"Sno : "<<row[i]<<"\t Branch: "<<row[i+1]<<endl;
-       j += atoi (row[i]);// converting to int
-       //cout<<"i = "<<j<<endl;
+       j += atoi (row[i]);
    }
 }
 
 void Mysql :: getBranchNames(string branchname[], int &size)
 {
-   mysql_query (connect,"select distinct BranchName from RollNoDetails;");
-   res_set = mysql_store_result(connect);
-   unsigned int numrows = mysql_num_rows(res_set);
-   i = 0;
-   while (((row=mysql_fetch_row(res_set)) !=NULL))
-   {
-      //size = i;
-       //cout<<"Branch Name "<<row["BranchName"] << endl;//<<"\t Branch: "<<row[i+1]<<endl;
-       //j += atoi (row[i]);// converting to int
-       //cout<<"i = "<<j<<endl;
-       branchname[i] = row[0];
-       i++;
-   }
-   size = i;
-   
+   qry = "select distinct BranchName from RollNoDetails;";
+   query(branchname, qry, size);
+    
 }
 
 void Mysql :: getRoomNos(string roomno[], int &size)
 {
-   mysql_query (connect,"select distinct RoomNo from RoomDetails;");
-   res_set = mysql_store_result(connect);
-   unsigned int numrows = mysql_num_rows(res_set);
-   i = 0;
-   while (((row=mysql_fetch_row(res_set)) !=NULL))
-   {
-       roomno[i] = row[0];
-       i++;
-   }
-   size = i;
-   
+   qry = "select distinct RoomNo from RoomDetails;";
+   query(roomno, qry, size);
 }
 
 // Destructor

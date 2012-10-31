@@ -14,6 +14,7 @@ class Mysql
    MYSQL_ROW row;
 //   unsigned int i=0;
    int j, i;
+   string qry;
    
    public:
    Mysql();
@@ -23,5 +24,6 @@ class Mysql
    void Select();
    void getBranchNames(string branchname[], int &size);
    void getRoomNos(string roomno[], int &size);
+   void query(string field[], string qry, int &size);
     
 };
