@@ -13,6 +13,6 @@ class SP
       void head();
       void javascript();
       void body();
-      void form();
+//      void form();
       void newform();
 };

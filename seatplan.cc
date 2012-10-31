@@ -52,7 +52,7 @@ void SP :: javascript()
 }
 
 // Form for getting values
-void SP :: form() // Old form
+/*void SP :: form() // Old form
 {
    cout << " <form >" << endl
         << " <b>" << endl
@@ -90,18 +90,18 @@ void SP :: form() // Old form
    cout << "<input type=\"submit\" value=\"Submit\" id=\"submit\" >" << endl;
 
    cout << "</form>" << endl;
-}
+}*/
 
 void SP :: newform()
 {
-   cout << " <form >" << endl
+   cout << " <form action = \"SP-CPP/getdetails.cgi\">" << endl
         << " <b>" << endl
         << "Name of examinaton"
    // Radio buttons for examinaton
-        << "<input type=\"radio\" name=\"exam\" value=\"sessional\"" << endl
+        << "<input type=\"radio\" name=\"exam\" value=\"Sessional\"" << endl
         << " checked=\"checked\"/> Sessional" << endl
-        << "<input type=\"radio\" name=\"exam\" value=\"dec\" /> Dec" << endl
-        << "<input type=\"radio\" name=\"exam\" value=\"june\" /> June <br><br>" << endl
+        << "<input type=\"radio\" name=\"exam\" value=\"Dec\" /> Dec" << endl
+        << "<input type=\"radio\" name=\"exam\" value=\"June\" /> June <br><br>" << endl
         
    // Date
         << "Date <select name=\"day\">" << endl;
@@ -109,7 +109,7 @@ void SP :: newform()
    for(i = 0; i <= 31; i++)
    {
       if (i == 0)
-         cout << "<option value=\"dd\" >DD</option>" << endl;
+         cout << "<option value=\"DD\" >DD</option>" << endl;
       else
          cout << "<option value=\"" << i << "\" >" << i << "</option>" << endl;
    }
@@ -120,7 +120,7 @@ void SP :: newform()
    for(i = 0; i <= 12; i++)
    {
       if (i == 0)
-         cout << "<option value=\"mm\" >MM</option>" << endl;
+         cout << "<option value=\"MM\" >MM</option>" << endl;
       else
          cout << "<option value=\"" << i << "\" >" << i << "</option>" << endl;
    }
@@ -131,7 +131,7 @@ void SP :: newform()
    for(i = 2011; i <= 2025; i++)
    {
       if (i == 2011)
-         cout << "<option value=\"yyyy\" >YYYY</option>" << endl;
+         cout << "<option value=\"YYYY\" >YYYY</option>" << endl;
       else
          cout << "<option value=\"" << i << "\" >" << i << "</option>" << endl;
    }
@@ -148,26 +148,30 @@ void SP :: newform()
    cout << "</select>" << endl
         << "   <select name=\"mints\">" << endl;
    // Minutes
-   for(i = 1; i <= 6; i++)
+   for(i = 0; i <= 6; i++)
    {
-      cout << "<option value=\"" << i << "\" >" << (i * 10) << "</option>" << endl;
+      if (i == 0)
+         cout << "<option value=\"00\" >00</option>" << endl;
+      else
+         cout << "<option value=\"" << (i * 10) << "\" >" << (i * 10) << "</option>" << endl;
    }
    
    cout << "</select>" << endl
         << "   <select name=\"ampm\">" << endl;
    // AM/PM
-   cout << "<option value=\"am\" >AM</option>" << endl;
-   cout << "<option value=\"pm\" >PM</option>" << endl;
+   cout << "<option value=\"AM\" >AM</option>" << endl;
+   cout << "<option value=\"PM\" >PM</option>" << endl;
      
    cout << "</select>" << endl;
    
    // Semester
    cout << "<br><br>Semester"
    // Radio buttons for semester
-        << "<input type=\"radio\" name=\"sem\" value=\"even\"" << endl
-        << " checked=\"checked\"/> EVEN" << endl
-        << "<input type=\"radio\" name=\"sem\" value=\"odd\" /> ODD" << endl;
+        << "<input type=\"radio\" name=\"sem\" value=\"Even\"" << endl
+        << " checked=\"checked\"/> Even" << endl
+        << "<input type=\"radio\" name=\"sem\" value=\"Odd\" /> Odd" << endl;
    
+   cout << "<br><input type=\"submit\" value=\"Submit\" id=\"submit\" >" << endl;
         
    cout << "</form>" << endl;
 }
