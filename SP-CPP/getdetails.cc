@@ -53,6 +53,7 @@ void GetDetails :: getDetails()
 
 void GetDetails :: showDetails()
 {
+   // Display Details
    cout << "Examination: " << examination << endl
         << "<br>Date: " << date << endl
         << "<br>Time: " << time << endl
