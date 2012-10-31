@@ -15,6 +15,7 @@ using namespace cgicc;
 class GetDetails
 {
    Cgicc formData;
+   
    form_iterator fi;
    
    string examination, date, day, month, year, time, hours, mints, am_pm,
