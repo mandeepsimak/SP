@@ -21,4 +21,7 @@ getdetails.o: getdetails.cc getdetails.h
 
 getdetails_main.o: getdetails_main.cpp getdetails.h
 	$(CC) $(CFLAGS) getdetails_main.cpp $(CGIFLAG)
+
+clean:
+	rm -f *.cgi
 	
