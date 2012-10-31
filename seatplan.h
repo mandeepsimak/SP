@@ -4,7 +4,8 @@ using namespace std;
 
 class SP
 {
-
+   int i;
+   
    public:
       SP();
       ~SP();
@@ -13,4 +14,5 @@ class SP
       void javascript();
       void body();
       void form();
+      void newform();
 };
