@@ -16,12 +16,12 @@ getdetails.cgi: $(GETDETAILS)
 
 # dependencies
 
-getdetails.o: getdetails.cc getdetails.h
+getdetails.o: getdetails.cc getdetails.h files.h
 	$(CC) $(CFLAGS) getdetails.cc $(CGIFLAG)
 
-getdetails_main.o: getdetails_main.cpp getdetails.h
+getdetails_main.o: getdetails_main.cpp getdetails.h files.h
 	$(CC) $(CFLAGS) getdetails_main.cpp $(CGIFLAG)
 
 clean:
-	rm -f *.cgi
+	rm -f *.cgi *.in *.o
 	
