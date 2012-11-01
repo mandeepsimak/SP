@@ -167,11 +167,21 @@ void SP :: newform()
    // Semester
    cout << "<br><br>Semester"
    // Radio buttons for semester
-        << "<input type=\"radio\" name=\"sem\" value=\"Even\"" << endl
+        << "<input type=\"radio\" name=\"sem\" value=\"2\"" << endl
         << " checked=\"checked\"/> Even" << endl
-        << "<input type=\"radio\" name=\"sem\" value=\"Odd\" /> Odd" << endl;
+        << "<input type=\"radio\" name=\"sem\" value=\"1\" /> Odd" << endl;
+        
+   // Table of subject codes
+   cout << "<table>" << endl
+        << "<tr>" << endl
+        << "<th>Branch Name</th>" << endl;
+   for(i = 1; i <= 8; i++)
+   {
+      cout << "<th>Sem " << i << " </th>" << endl;
+   }
+   cout << "</tr>" << endl;
    
-   cout << "<br><input type=\"submit\" value=\"Submit\" id=\"submit\" >" << endl;
+   cout << "<br><br><input type=\"submit\" value=\"Submit\" id=\"submit\" >" << endl;
         
    cout << "</form>" << endl;
 }
