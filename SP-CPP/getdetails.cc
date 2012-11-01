@@ -1,4 +1,6 @@
 #include "getdetails.h"
+#include "files.h"
+
 
 GetDetails :: GetDetails()
 {
@@ -58,6 +60,16 @@ void GetDetails :: showDetails()
         << "<br>Date: " << date << endl
         << "<br>Time: " << time << endl
         << "<br>Semester: " << semester << endl;
+}
+
+void GetDetails :: createFile()
+{
+   outfile.open(InputFile);
+   outfile << examination << endl
+           << date << endl 
+           << time << endl
+           << semester << endl;
+   outfile.close();
 }
 
 GetDetails :: ~GetDetails()

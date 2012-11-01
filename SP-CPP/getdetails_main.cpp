@@ -6,6 +6,7 @@ int main (void)
    
    get.body();
    get.showDetails();
+   get.createFile();
 //   cout << "hello";
       
    return 0;
