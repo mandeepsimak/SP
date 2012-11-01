@@ -18,4 +18,17 @@ main(void)
    {
       cout << "<br>Room Name: " << br[i] << endl;
    }
+   
+   string subcode[15][15];
+   int size[10], total = 1;
+   
+   MySQL.getSubCodes(subcode, size, total);
+   for(int i=1; i<=total; i++)
+   {
+      for(int j=0; j<size[i]; j++)
+      {
+         cout << "<br>" << subcode[i][j] << "<br>" << endl;
+      }
+   }
+   
 }

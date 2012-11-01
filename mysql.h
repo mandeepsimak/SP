@@ -6,6 +6,8 @@ using namespace std;
 
 #include"database_details.h"
 
+const int MAX_SIZE = 15;
+
 class Mysql
 {
    protected:
@@ -25,5 +27,7 @@ class Mysql
    void getBranchNames(string branchname[], int &size);
    void getRoomNos(string roomno[], int &size);
    void query(string field[], string qry, int &size);
+   void query(string subcode[][MAX_SIZE], string qry, int size[], int &total);
+   void getSubCodes(string subcode[][MAX_SIZE], int size[], int &total);
     
 };

@@ -38,6 +38,38 @@ void Mysql :: query(string field[], string qry, int &size)
    size = i;
 }
 
+void Mysql :: query(string subcode[][MAX_SIZE], string qry, int size[], int &total)
+{
+   mysql_query (connect, qry.c_str());
+   res_set = mysql_store_result(connect);
+   unsigned int numrows = mysql_num_rows(res_set);
+   i = 0;
+   while (((row=mysql_fetch_row(res_set)) !=NULL))
+   {
+       subcode[total][i] = row[0];
+       i++;
+   }
+   size[total] = i;
+   total++;
+}
+
+void Mysql :: getSubCodes(string subcode[][MAX_SIZE], int size[], int &total)
+{
+//   for(int k = 3; k <= 4; k++)
+//   {
+//      qry = "Select subCode from IT where semester = ";
+//      qry += k;
+//      qry += ";";
+//      query(subcode, qry, size, total);
+//   }
+
+   qry = "Select subCode from IT where semester = 3";
+   query(subcode, qry, size, total);
+   qry = "Select subCode from IT where semester = 4";
+   query(subcode, qry, size, total);
+
+}
+
 void Mysql :: Select()
 {
    mysql_query (connect,"select * from RollNoDetails;");
